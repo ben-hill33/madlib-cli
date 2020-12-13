@@ -25,4 +25,4 @@ To initialize, run this command in CLI:
 To check output:
 ```$ python madlib_cli.py```
 ### Tests
-Tests coming soon!!
+This program is tested with pytest
