@@ -7,7 +7,6 @@ def test_read_template_returns_stripped_string():
     expected = "It was a {Adjective} and {Adjective} {Noun}."
     assert actual == expected
 
-
 def test_parse_template():
     actual_stripped, actual_parts = parse_template(
         "It was a {Adjective} and {Adjective} {Noun}."
