@@ -1,4 +1,11 @@
 import re
+from colorama import init
+from termcolor import colored
+from pyfiglet import Figlet
+ # greeting
+
+
+init()
 
 def read_template(path):
 
@@ -43,9 +50,10 @@ def merge(stripped_template, parts):
 
 
 def collect_input(parts):
+    f=Figlet(font='slant')
     responses = []
     for part in parts:
-        response = input(f"Enter a {part} ")
+        response = f.renderText(input(f"Enter a {part} "))
         responses.append(response)
 
     return responses
@@ -57,7 +65,8 @@ def save_madlib(merged, path):
 
 
 def main(path):
-    print("MadLib CLI edition!")
+    f=Figlet(font='larry3d')
+    print (colored(f.renderText("MadLib CLI edition!"), 'green'))
 
     template = read_template(path)
 
@@ -67,7 +76,8 @@ def main(path):
 
     merged = merge(stripped, responses)
 
-    print(merged)
+    # print(colored(merged, 'green', 'on_red'))
+    print(colored(merged, 'green'))
 
     out_path = path.replace(".txt", ".completed.txt")
 
